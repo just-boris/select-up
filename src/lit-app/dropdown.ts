@@ -1,4 +1,5 @@
 import { LitElement, html, property } from "@polymer/lit-element";
+import { repeat } from "@polymer/lit-element/node_modules/lit-html/directives/repeat";
 import { Item } from "../common/interfaces";
 import "./dropdown-item";
 
@@ -42,7 +43,9 @@ class SelectDropdown extends LitElement {
       </style>
       <ul>
         ${
-          this.items.map(
+          repeat(
+            this.items,
+            item => item.id,
             item =>
               html`
                 <li>

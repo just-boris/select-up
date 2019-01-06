@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "@polymer/lit-element": "^0.6.5",
+    "preact": "^8.4.2",
     "stats.js": "^0.17.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
+    "parcel-plugin-inlinesvg": "^0.1.0",
     "typescript": "^3.2.2"
   },
   "scripts": {

@@ -1,20 +1,8 @@
 import { LitElement, html, property } from "@polymer/lit-element";
+import { unsafeHTML } from "@polymer/lit-element/node_modules/lit-html/directives/unsafe-html";
+import { Item } from "../common/interfaces";
+import caretIcon from "../common/caret.svg";
 import "./dropdown";
-
-
-const caretIcon = html`
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 16 16"
-    width="16"
-    height="16"
-  >
-    <path
-      style="fill: currentColor;stroke-linejoin: round;stroke: currentColor;stroke-width: 2px;"
-      d="M4 5h8l-4 6-4-6z"
-    ></path>
-  </svg>
-`;
 
 export default class Select extends LitElement {
   @property()
@@ -82,7 +70,7 @@ export default class Select extends LitElement {
     return html`
       <div class="trigger" @mousedown="${this.onTriggerClick}">
         <span class="value">${this.renderValue()}</span>
-        <span class="caret">${caretIcon}</span>
+        <span class="caret">${unsafeHTML(caretIcon)}</span>
       </div>
       <x-select-dropdown
         .open="${this.__open}"

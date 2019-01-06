@@ -1,6 +1,6 @@
-import names from "./names.json";
-import "./lit-element";
-import Select from "./lit-element";
+import names from "../common/names.json";
+import "./select";
+import Select from "./select";
 
 const element = document.createElement("x-select") as Select;
 element.placeholder = "Select a name...";

@@ -1,4 +1,5 @@
 import { LitElement, html, property } from "@polymer/lit-element";
+import { Item } from "../common/interfaces";
 import "./dropdown-item";
 
 class SelectDropdown extends LitElement {

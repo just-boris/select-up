@@ -32,6 +32,8 @@ class SelectDropdown extends LitElement {
         ul {
           padding: 0;
           margin: 0;
+          max-height: 80vh;
+          overflow: auto;
         }
         li {
           list-style: none;

@@ -1,11 +1,6 @@
 import { LitElement, html, property } from "@polymer/lit-element";
 import "./dropdown";
 
-const items = [
-  { id: "1", text: "Item one" },
-  { id: "2", text: "Item two" },
-  { id: "3", text: "Item three" }
-];
 
 const caretIcon = html`
   <svg
@@ -21,12 +16,15 @@ const caretIcon = html`
   </svg>
 `;
 
-class Select extends LitElement {
+export default class Select extends LitElement {
   @property()
   value?: string;
 
   @property()
   placeholder?: string;
+
+  @property()
+  items: Item[] = [];
 
   @property()
   __open: boolean = false;
@@ -48,7 +46,7 @@ class Select extends LitElement {
   }
 
   private findItem(id: string) {
-    return items.filter(item => item.id === id)[0];
+    return this.items.filter(item => item.id === id)[0];
   }
 
   private onTriggerClick() {
@@ -88,7 +86,7 @@ class Select extends LitElement {
       </div>
       <x-select-dropdown
         .open="${this.__open}"
-        .items=${items}
+        .items=${this.items}
         .selectedId=${this.value}
         @itemClick="${this.onItemClick}"
       />

@@ -1,0 +1,24 @@
+{
+  "name": "lit-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.5",
+    "stats.js": "^0.17.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "start": "parcel src/*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

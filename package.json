@@ -29,7 +29,7 @@
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack --progress",
     "postbuild": "cp node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js build/",
-    "deploy": "aws s3 sync build s3://hosted-demos/lit-select"
+    "now-build": "npm run build"
   },
   "browserslist": [
     "ie 11"

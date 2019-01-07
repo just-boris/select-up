@@ -10,6 +10,25 @@
       Select component demo with
       <a href="https://github.com/Polymer/lit-element">Lit-element</a>
     </h1>
-    <p><a href="preact.html">Preact</a> <b>Lit-element</b></p>
+    <p>
+      <a href="preact.html">Preact</a> <b>Lit-element</b>
+      <label>
+        <input type="checkbox" id="toggle-polyfills" /> use polyfills
+      </label>
+    </p>
+
+    <script>
+      var checkbox = document.querySelector("#toggle-polyfills");
+      var usePolyfills =
+        typeof window.customElements === "undefined" ||
+        location.search.indexOf("wc-ce") > -1;
+      checkbox.checked = usePolyfills;
+      checkbox.addEventListener("change", function(event) {
+        location.search = event.target.checked ? "wc-ce&wc-shadydom" : "";
+      });
+      if (usePolyfills) {
+        document.write('<script src="webcomponents-bundle.js"></' + "script>");
+      }
+    </script>
   </body>
 </html>

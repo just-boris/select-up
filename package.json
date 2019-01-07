@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@polymer/lit-element": "^0.6.5",
+    "@webcomponents/webcomponentsjs": "^2.2.1",
     "preact": "^8.4.2",
     "stats.js": "^0.17.0"
   },
@@ -26,7 +27,9 @@
   },
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack --progress"
+    "build": "NODE_ENV=production webpack --progress",
+    "postbuild": "cp node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js build/",
+    "deploy": "aws s3 sync build s3://hosted-demos/lit-select"
   },
   "browserslist": [
     "ie 11"

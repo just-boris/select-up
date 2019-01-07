@@ -22,7 +22,7 @@ module.exports = {
     rules: [
       {
         test: /.js$/,
-        exclude: /node_modules\/(?!@polymer)/,
+        include: [__dirname + "/node_modules/@polymer/lit-element"],
         use: {
           loader: "babel-loader",
           options: {
